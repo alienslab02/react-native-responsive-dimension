@@ -84,3 +84,19 @@ export default AwesomeResponsiveComponent;
 ...
 
 ```
+### Optional - Setup the dimensions of the designs
+
+By default this module considers default design size as 380 x 820 (width x height) but you can modify it. To do so, at the start of the application, set the height and width of the designs you are following.
+
+```
+import {setGuidelineBaseSize} from 'react-native-responsive-dimension';
+
+import {AppRegistry} from 'react-native';
+import App from './App';
+import {name as appName} from './app.json';
+
+setGuidelineBaseSize(350, 850) // change the design guideline size
+
+AppRegistry.registerComponent(appName, () => App);
+
+```

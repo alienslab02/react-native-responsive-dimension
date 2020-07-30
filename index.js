@@ -5,9 +5,15 @@ let {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 let guidelineBaseWidth = 380;
 let guidelineBaseHeight = 820;
 
-const setGuidelineBaseWidth = (width: number) => (guidelineBaseWidth = width);
-const setGuidelineBaseHeight = (height: number) =>
-  (guidelineBaseHeight = height);
+/**
+ * Set the default guideline of original designs
+ * @param  {number} width   The width of the original designs to follow.
+ * @param  {number} height  The height of the original designs to follow.
+ */
+const setGuidelineBaseSize = (width: number, height: number) => {
+  guidelineBaseWidth = width;
+  guidelineBaseHeight = height;
+};
 
 /**
  * Converts provided size to independent pixel (dp).
@@ -96,8 +102,7 @@ const removeOrientationListener = () => {
 export {
   fixedWidth,
   fixedHeight,
-  setGuidelineBaseHeight,
-  setGuidelineBaseWidth,
+  setGuidelineBaseSize,
   percentageWidth,
   percentageHeight,
   listenOrientationChange,
